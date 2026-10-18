@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница пользователя</title>
+    <link rel="stylesheet" href="../static/remove.css">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="body">
+    <a href="/" class="user_page_a">На главную</a>
+    <div class="main_line"></div>
+
+    <h1 class="user_page_h1">Профиль пользователя: {{ user[1] }}</h1>
+    
+    <section class="user_page_information">
+        <p>Email: {{ user[2] }}</p>
+        <div class="user_page_information1">
+            {% if posts %}
+                <h2>Посты: </h2>
+                <ul class="posts">
+                    {% for post in posts %}
+                        <li>
+                            <h2>{{post[1]}}</h2>
+                            <p>{{post[2]}}</p>
+                            <div class="a"></div>
+                            <span>Был создан: {{post[5]}}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p style="color: #fff9f1;">У пользователь пока нет постов.</p>
+            {% endif %}
+        </div>
+        <div class="user_page_information2">
+            {% if notifications %}
+                <ul class="user_page_information2__ul">
+                    {% for note in notifications %}
+                        <li class="user_page_information2__li">
+                            <strong>{{ note[2] }}</strong>: {{ note[3] }}
+                            <em>({{ note[4] }})</em>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p style="color: #fff9f1;">Нет уведомлений</p>
+            {% endif %}
+        </div>
+    </section>
+</body>
+</html>

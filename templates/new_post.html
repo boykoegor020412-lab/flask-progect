@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить пост</title>
+    <link rel="stylesheet" href="../static/remove.css?v=1">
+    <link rel="stylesheet" href="../static/style.css?v=1">
+</head>
+<body class="body">
+    <a href="/" class="user_page_a">На главную</a>
+    <div class="main_line"></div>
+    <h1 class="post_h1">Добавить новый пост</h1>
+    <form action="/add_post" method="POST" class="post_form">
+        <div class="post_form_informations">
+            <div class="post_form_information">
+                <label for="title">Заголовок:</label>
+                <input type="text" id="title" name="title" required="">
+            </div>
+            <div class="post_form_information">
+                <label for="category">Категория:</label>
+                <select id="category" name="category" required="">
+                    <option value="">Выберите категорию</option>
+                    {% for category in categories %}
+                        <option value="{{ category[0] }}">{{ category[1] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="post_form_information">
+                <label for="content">Содержимое:</label>
+                <textarea id="content" name="content" required="" maxlength="1000"></textarea>
+            </div>
+        </div>
+        <input type="submit" value="Добавить пост" class="post_form_input-submit">
+    </form>
+
+</body>
+</html>

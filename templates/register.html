@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="../static/remove.css?v=1">
+    <link rel="stylesheet" href="../static/style.css?v=1">
+</head>
+<body class="body">
+    <a href="/" class="user_page_a">На главную</a>
+    <div class="main_line"></div>
+
+    <div class="register"> 
+        <h1 class="register_h1">Регистрация</h1> 
+        <form method="post" class="register_form">
+            <div class="register_form_informations">
+                <div class="register_form_information">
+                    <label for="name">Имя:</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div class="register_form_information">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="register_form_information">
+                    <label for="password">Пароль:</label>
+                    <input type="password" name="password" id="password" required>
+                </div>  
+            </div>
+            <button type="submit">Зарегестрироваться</button>
+        </form>
+    </div>
+</body>
+</html>
